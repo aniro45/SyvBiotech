@@ -1,0 +1,60 @@
+---
+const features = [
+  {
+    icon: '/icons/research.svg',
+    title: 'Research & Development',
+    description: 'Pioneering innovative solutions through advanced research'
+  },
+  {
+    icon: '/icons/quality.svg',
+    title: 'Quality Assurance',
+    description: 'Maintaining the highest standards in pharmaceutical manufacturing'
+  },
+  {
+    icon: '/icons/global.svg',
+    title: 'Global Reach',
+    description: 'Serving patients worldwide with presence in over 50 countries'
+  }
+];
+---
+<section class="features">
+  <div class="container">
+    <div class="feature-grid">
+      {features.map(feature => (
+        <div class="feature-card">
+          <img src={feature.icon} alt={feature.title} />
+          <h3>{feature.title}</h3>
+          <p>{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--gray-light);
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  .feature-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+  }
+  .feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+</style>

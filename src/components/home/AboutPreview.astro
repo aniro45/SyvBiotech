@@ -1,0 +1,45 @@
+---
+---
+<section class="about-preview">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>SyvBiotech is a leading pharmaceutical company committed to discovering, developing, and delivering innovative medicines that address unmet medical needs.</p>
+        <a href="/about" class="btn">Learn More</a>
+      </div>
+      <div class="about-image">
+        <img src="/images/lab.jpg" alt="Research Laboratory" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-preview {
+    background: var(--gray-light);
+  }
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+  .about-text p {
+    margin-bottom: 2rem;
+  }
+  .about-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

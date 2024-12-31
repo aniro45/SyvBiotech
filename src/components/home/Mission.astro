@@ -1,0 +1,68 @@
+---
+const values = [
+  {
+    title: 'Innovation',
+    description: 'Pioneering breakthrough solutions in pharmaceutical research'
+  },
+  {
+    title: 'Excellence',
+    description: 'Maintaining the highest standards in all our operations'
+  },
+  {
+    title: 'Integrity',
+    description: 'Operating with transparency and ethical principles'
+  }
+];
+---
+<section class="mission">
+  <div class="container">
+    <h2>Our Mission & Values</h2>
+    <p class="mission-text">
+      To transform healthcare through innovative pharmaceutical solutions while maintaining 
+      the highest standards of quality and ethical practices.
+    </p>
+    <div class="values-grid">
+      {values.map(value => (
+        <div class="value-card">
+          <h3>{value.title}</h3>
+          <p>{value.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .mission {
+    padding: 4rem 0;
+    background: white;
+  }
+  h2 {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .mission-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .value-card {
+    padding: 2rem;
+    background: var(--gray-light);
+    border-radius: 8px;
+    text-align: center;
+  }
+  .value-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+</style>

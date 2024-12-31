@@ -1,0 +1,62 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>SyvBiotech</h3>
+      <p>Improving lives through innovative medicine</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>Email: info@syvbiotech.com</p>
+      <p>Phone: (555) 123-4567</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {currentYear} SyvBiotech. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--primary);
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+  }
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .footer-section h3 {
+    margin-bottom: 1rem;
+  }
+  .footer-section ul {
+    list-style: none;
+  }
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+</style>

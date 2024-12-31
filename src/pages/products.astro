@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products } from '../data/products';
+---
+
+<Layout title="Our Products - SyvBiotech">
+  <div class="products-hero">
+    <div class="container">
+      <h1>Our Products</h1>
+      <p>Discover our range of innovative pharmaceutical solutions</p>
+    </div>
+  </div>
+
+  <section class="products-section">
+    <div class="container">
+      <div class="filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="Cardiovascular">Cardiovascular</button>
+        <button class="filter-btn" data-category="Neurology">Neurology</button>
+        <button class="filter-btn" data-category="Immunology">Immunology</button>
+      </div>
+
+      <div class="products-grid">
+        {products.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .products-hero {
+    background: var(--primary);
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .products-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary);
+    background: none;
+    color: var(--primary);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--primary);
+    color: white;
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>
+
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const productCards = document.querySelectorAll('.product-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
+      
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      productCards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
