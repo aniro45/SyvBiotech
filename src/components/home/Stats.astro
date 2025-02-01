@@ -1,20 +1,23 @@
 ---
 const stats = [
-  { number: '50+', label: 'Countries' },
-  { number: '1000+', label: 'Employees' },
-  { number: '30+', label: 'Years Experience' },
-  { number: '100+', label: 'Research Projects' }
+  { number: "3+", label: "Countries" },
+  { number: "50+", label: "Employees" },
+  { number: "2+", label: "Years Experience" },
+  { number: "100+", label: "Research Projects" },
 ];
 ---
+
 <section class="stats">
   <div class="container">
     <div class="stats-grid">
-      {stats.map(stat => (
-        <div class="stat-card">
-          <div class="number">{stat.number}</div>
-          <div class="label">{stat.label}</div>
-        </div>
-      ))}
+      {
+        stats.map((stat) => (
+          <div class="stat-card">
+            <div class="number">{stat.number}</div>
+            <div class="label">{stat.label}</div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

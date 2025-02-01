@@ -1,11 +1,12 @@
 ---
 const navItems = [
-  { href: '/', text: 'Home' },
-  { href: '/about', text: 'About' },
-  { href: '/products', text: 'Products' },
-  { href: '/contact', text: 'Contact' }
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },
+  { href: "/products", text: "Products" },
+  { href: "/contact", text: "Contact" },
 ];
 ---
+
 <header class="header">
   <nav class="nav-container">
     <div class="logo">
@@ -13,9 +14,13 @@ const navItems = [
       <span>SyvBiotech</span>
     </div>
     <ul class="nav-links">
-      {navItems.map(item => (
-        <li><a href={item.href}>{item.text}</a></li>
-      ))}
+      {
+        navItems.map((item) => (
+          <li>
+            <a href={item.href}>{item.text}</a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </header>
@@ -23,7 +28,7 @@ const navItems = [
 <style>
   .header {
     background: var(--background);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
   }
   .nav-container {
@@ -47,6 +52,7 @@ const navItems = [
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary);
+    margin-left: 5px;
   }
   .nav-links {
     display: flex;
