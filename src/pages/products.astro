@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ProductCard from '../components/ProductCard.astro';
-import { products } from '../data/products';
+import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { products } from "../data/products";
 ---
 
 <Layout title="Our Products - SyvBiotech">
@@ -16,15 +16,14 @@ import { products } from '../data/products';
     <div class="container">
       <div class="filters">
         <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="Cardiovascular">Cardiovascular</button>
-        <button class="filter-btn" data-category="Neurology">Neurology</button>
-        <button class="filter-btn" data-category="Immunology">Immunology</button>
+        <button class="filter-btn" data-category="Ayurvedic">Ayurvedic</button>
+        <button class="filter-btn" data-category="Nutraceutical"
+          >Nutraceutical</button
+        >
       </div>
 
       <div class="products-grid">
-        {products.map(product => (
-          <ProductCard {...product} />
-        ))}
+        {products.map((product) => <ProductCard {...product} />)}
       </div>
     </div>
   </section>
@@ -57,7 +56,8 @@ import { products } from '../data/products';
     cursor: pointer;
     transition: all 0.3s;
   }
-  .filter-btn.active, .filter-btn:hover {
+  .filter-btn.active,
+  .filter-btn:hover {
     background: var(--primary);
     color: white;
   }
@@ -66,24 +66,38 @@ import { products } from '../data/products';
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
+  @media (max-width: 768px) {
+    .products-hero h1 {
+      font-size: 2rem;
+    }
+    .filter-btn {
+      padding: 0.5rem;
+    }
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
 <script>
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const productCards = document.querySelectorAll('.product-card');
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const productCards = document.querySelectorAll(".product-card");
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const category = button.getAttribute('data-category');
-      
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const category = button.getAttribute("data-category");
 
-      productCards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = 'block';
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      productCards.forEach((card: HTMLElement) => {
+        if (
+          category === "all" ||
+          card.getAttribute("data-category") === category
+        ) {
+          card.style.display = "block";
         } else {
-          card.style.display = 'none';
+          card.style.display = "none";
         }
       });
     });

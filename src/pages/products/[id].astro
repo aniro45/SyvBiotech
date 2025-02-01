@@ -1,0 +1,116 @@
+---
+import Layout from "./../../layouts/Layout.astro";
+import { products } from "./../../data/products";
+
+export async function getStaticPaths() {
+  return products.map((product) => ({
+    params: { id: product.id.toString() },
+  }));
+}
+
+const { id } = Astro.params;
+const product = products.find((p) => p.id === parseInt(id));
+
+if (!product) {
+  throw new Error(`Product with id ${id} not found`);
+}
+---
+
+<Layout title={product.name}>
+  <div class="product-detail">
+    <div class="product-image">
+      <img src={product.image} alt={product.name} />
+    </div>
+    <div class="product-info">
+      <h1>{product.name}</h1>
+      <span class="category">{product.category}</span>
+      <p class="description">{product.description}</p>
+      <ul class="summary">
+        {product.summary.map((line) => <li>{line}</li>)}
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  .product-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 2rem auto;
+  }
+  .product-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .product-info {
+    max-width: 800px;
+    text-align: center;
+  }
+  .product-info h1 {
+    margin-bottom: 1rem;
+    color: #1e3c72;
+    font-size: 2.5rem;
+  }
+  .category {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #1e3c72;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  .description {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    background: #e0f7fa;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #1e3c72;
+  }
+  .summary {
+    background: #f0f4f8;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    text-align: left;
+    list-style: none;
+  }
+  .summary li {
+    margin: 0.5rem 0;
+    font-weight: bold;
+    color: #1e3c72;
+    font-size: 1.2rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .summary li::before {
+    content: "•";
+    color: #2a5298;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .error {
+    text-align: center;
+    padding: 2rem;
+  }
+</style>
