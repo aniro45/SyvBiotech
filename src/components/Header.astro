@@ -37,12 +37,13 @@ const navItems = [
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 10px;
   }
 
   .logo {
     display: flex;
     align-items: center;
+    margin-left: 10px; /* Shifted to the right */
   }
 
   .logo img {
@@ -70,7 +71,7 @@ const navItems = [
   }
 
   .nav-links li {
-    margin-left: 20px;
+    margin-left: 10px; /* Decreased margin */
   }
 
   .nav-links a {
@@ -91,23 +92,29 @@ const navItems = [
 
   @media (max-width: 768px) {
     .nav-links {
-      display: none;
+      visibility: hidden;
       flex-direction: column;
       position: absolute;
       top: 60px;
       right: 0;
       background: white;
       width: 100%;
+      border-radius: 5px;
       text-align: center;
       padding: 10px 0;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 2s ease-in-out;
+      transition:
+        max-height 1.5s ease-in-out,
+        opacity 1.5s ease-in-out,
+        visibility 1.5s ease-in-out;
+      opacity: 0;
     }
 
     .nav-links.open {
-      display: flex;
+      visibility: visible;
       max-height: 500px; /* Adjust as needed */
+      opacity: 1;
     }
 
     .nav-links li {
@@ -124,7 +131,6 @@ const navItems = [
   document.addEventListener("DOMContentLoaded", function () {
     const hamburgerButton = document.getElementById("hamburger-button");
     hamburgerButton.addEventListener("click", function () {
-      console.log("clicked");
       const mobileMenu = document.querySelector(".nav-links");
       if (mobileMenu) {
         mobileMenu.classList.toggle("open");
