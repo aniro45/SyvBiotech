@@ -9,10 +9,10 @@ const navItems = [
 
 <header class="header">
   <nav class="nav-container">
-    <div class="logo">
+    <a href="/" class="logo">
       <img src="/logo.svg" alt="SyvBiotech Logo" />
       <span>SyvBiotech</span>
-    </div>
+    </a>
     <button class="hamburger" id="hamburger-button"> &#9776; </button>
     <ul class="nav-links">
       {
@@ -44,6 +44,8 @@ const navItems = [
     display: flex;
     align-items: center;
     margin-left: 10px; /* Shifted to the right */
+    text-decoration: none;
+
   }
 
   .logo img {
@@ -55,6 +57,7 @@ const navItems = [
   .logo span {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #1d66b4;
   }
 
   .hamburger {
