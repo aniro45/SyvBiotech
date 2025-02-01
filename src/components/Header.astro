@@ -13,6 +13,7 @@ const navItems = [
       <img src="/logo.svg" alt="SyvBiotech Logo" />
       <span>SyvBiotech</span>
     </div>
+    <button class="hamburger" id="hamburger-button"> &#9776; </button>
     <ul class="nav-links">
       {
         navItems.map((item) => (
@@ -27,45 +28,107 @@ const navItems = [
 
 <style>
   .header {
-    background: var(--background);
+    width: 100%;
+    background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
   }
+
   .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
   }
+
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
   }
+
   .logo img {
-    height: 40px;
-    width: auto;
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
   }
+
   .logo span {
     font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-left: 5px;
+    font-weight: bold;
   }
+
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
   .nav-links {
     display: flex;
-    gap: 2rem;
     list-style: none;
   }
+
+  .nav-links li {
+    margin-left: 20px;
+  }
+
   .nav-links a {
     text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-    transition: color 0.3s;
+    color: #333;
+    font-size: 1rem;
+    padding: 10px 20px;
+    display: block;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
   }
+
   .nav-links a:hover {
-    color: var(--primary);
+    background-color: #f0f0f0;
+    color: #007bff;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: white;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 2s ease-in-out;
+    }
+
+    .nav-links.open {
+      display: flex;
+      max-height: 500px; /* Adjust as needed */
+    }
+
+    .nav-links li {
+      margin-left: 0;
+    }
+
+    .hamburger {
+      display: block;
+    }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerButton = document.getElementById("hamburger-button");
+    hamburgerButton.addEventListener("click", function () {
+      console.log("clicked");
+      const mobileMenu = document.querySelector(".nav-links");
+      if (mobileMenu) {
+        mobileMenu.classList.toggle("open");
+      }
+    });
+  });
+</script>
