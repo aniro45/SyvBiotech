@@ -129,7 +129,7 @@ export const products: Product[] = [
   },
   {
     id: 7,
-    name: "Syv-500",
+    name: "NeuroNect",
     category: "Ayurvedic",
     description:
       "Supports neuro-muscular health and aids in managing related disorders.",
