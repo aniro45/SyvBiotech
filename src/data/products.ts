@@ -129,10 +129,10 @@ export const products: Product[] = [
   },
   {
     id: 7,
-    name: "NeuroNect",
+    name: "NuroNect",
     category: "Ayurvedic",
     description:
-      "Supports neuro-muscular health and aids in managing related disorders.",
+      "Supports Neuro-Muscular health and aids in managing related disorders.",
     image: "/products/Syv-500.jpg",
     summary: [
       "Promotes better nerve and muscle function.",
