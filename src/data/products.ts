@@ -14,7 +14,7 @@ export const products: Product[] = [
     category: "Nutraceutical",
     description:
       "Formulated to support the management of PCOS by targeting adipose tissue and ovarian health.",
-    image: "/src/products/evaroz_xt_syv_product.jpeg",
+    image: "https://i.postimg.cc/fWchwy7M/xyz.jpg",
     summary: [
       "Helps regulate hormonal balance for better reproductive health.",
       "Supports ovarian function and improves menstrual cycles.",
