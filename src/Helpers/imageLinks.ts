@@ -10,3 +10,7 @@ export const productImages = {
   zious: "https://i.postimg.cc/vBTHqS02/IMG-1446.jpg",
   phf7: "https://i.postimg.cc/HsTznqk7/B9-DA8583-17-F7-4-BCB-A075-B81-BEEB25-F8-C.png",
 };
+
+export const otherImages = {
+   labImage: "https://i.postimg.cc/4xKgyfZW/temp-Image7x-Ich9.avif"
+}
