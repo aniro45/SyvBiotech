@@ -1,3 +1,4 @@
+import { productImages } from "../Helpers/imageLinks";
 export interface Product {
   id: number;
   name: string;
@@ -14,7 +15,7 @@ export const products: Product[] = [
     category: "Nutraceutical",
     description:
       "Formulated to support the management of PCOS by targeting adipose tissue and ovarian health.",
-    image: "https://i.postimg.cc/fWchwy7M/xyz.jpg",
+    image: productImages.evaroz_xt,
     summary: [
       "Helps regulate hormonal balance for better reproductive health.",
       "Supports ovarian function and improves menstrual cycles.",
@@ -33,7 +34,7 @@ export const products: Product[] = [
     name: "For 7",
     category: "Nutraceutical",
     description: "Aiding in Bacterial Vaginosis (BV) management.",
-    image: "/products/neuro.jpg",
+    image: productImages.for_7,
     summary: [
       "Supports the natural balance of vaginal flora.",
       "Helps reduce recurrence of Bacterial Vaginosis.",
@@ -49,11 +50,11 @@ export const products: Product[] = [
   },
   {
     id: 3,
-    name: "Key2Grow",
+    name: "Key2Gro",
     category: "Nutraceutical",
     description:
       "Supports the management of intrauterine growth restriction, promoting optimal fetal development.",
-    image: "/products/for7.jpg",
+    image: productImages.key2grow,
     summary: [
       "Provides essential nutrients for fetal growth.",
       "Supports optimal placental function for nutrient transfer.",
@@ -73,7 +74,7 @@ export const products: Product[] = [
     category: "Ayurvedic",
     description:
       "A non-hormonal menstrual regulator designed to manage abnormal uterine bleeding effectively.",
-    image: "/products/syvtone.jpg",
+    image: productImages.syvtone,
     summary: [
       "Regulates menstrual cycles without hormonal interference.",
       "Reduces excessive menstrual bleeding and pain.",
@@ -93,7 +94,7 @@ export const products: Product[] = [
     category: "Ayurvedic",
     description:
       "A broad-spectrum, non-sedative cough remedy formulated to provide effective relief.",
-    image: "/products/sitogam.jpg",
+    image: productImages.sitogam,
     summary: [
       "Relieves dry and productive coughs effectively.",
       "Supports lung function with Ayurvedic ingredients.",
@@ -113,7 +114,7 @@ export const products: Product[] = [
     category: "Ayurvedic",
     description:
       "Offers anti-histaminic, antibacterial, and antiviral benefits for comprehensive immune support.",
-    image: "/products/Syv500.jpg",
+    image: productImages.syv_500,
     summary: [
       "Boosts immune function with herbal ingredients.",
       "Helps fight bacterial and viral infections naturally.",
@@ -129,11 +130,11 @@ export const products: Product[] = [
   },
   {
     id: 7,
-    name: "NuroNect",
+    name: "Nuronect",
     category: "Ayurvedic",
     description:
       "Supports Neuro-Muscular health and aids in managing related disorders.",
-    image: "/products/Syv-500.jpg",
+    image: productImages.nuronect,
     summary: [
       "Promotes better nerve and muscle function.",
       "Supports recovery from neuro-muscular disorders.",
@@ -153,7 +154,7 @@ export const products: Product[] = [
     category: "Ayurvedic",
     description:
       "Formulated to help alleviate pain caused by uric acid accumulation.",
-    image: "/products/Puricxt.jpg",
+    image: productImages.puric_xt,
     summary: [
       "Reduces uric acid levels naturally for pain relief.",
       "Supports joint health and reduces stiffness.",
@@ -173,7 +174,7 @@ export const products: Product[] = [
     category: "Nutraceutical",
     description:
       "A specialized hair supplement designed to nourish and strengthen hair.",
-    image: "/products/zious.jpg",
+    image: productImages.zious,
     summary: [
       "Promotes stronger and healthier hair growth.",
       "Reduces hair fall and strengthens hair roots.",
@@ -193,7 +194,7 @@ export const products: Product[] = [
     category: "Ayurvedic",
     description:
       "Developed for the integrated management of hemorrhoids and piles, providing natural relief.",
-    image: "/products/phf7.jpg",
+    image: productImages.phf7,
     summary: [
       "Provides natural relief from hemorrhoids and piles.",
       "Reduces pain, swelling, and discomfort.",
