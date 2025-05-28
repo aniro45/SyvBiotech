@@ -2,7 +2,7 @@ export const productImages = {
   evaroz_xt: "https://i.postimg.cc/xjJ5zj9h/IMG-1450.jpg",
   for_7: "https://i.postimg.cc/hGJjDYBF/IMG-1477.jpg",
   key2grow: "https://i.postimg.cc/tghhR7yG/IMG-1454.jpg",
-  syvtone: "https://i.postimg.cc/bwxSXWpm/IMG-1468.jpg",
+  syvtone: "https://i.postimg.cc/13GvJD5b/IMG-1469.jpg",
   sitogam: "https://i.postimg.cc/KzZzy8Jz/IMG-1471.jpg",
   syv_500: "https://i.postimg.cc/7Y0PWzN4/IMG-1459.jpg",
   nuronect: "https://i.postimg.cc/CKwN9jTf/IMG-1467.jpg",
