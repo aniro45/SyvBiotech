@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://syvbiotech.com/sitemap-index.xml

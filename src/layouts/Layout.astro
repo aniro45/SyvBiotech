@@ -14,8 +14,19 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="SyvBiotech - Leading pharmaceutical company dedicated to improving lives through innovative medicine" />
+    <meta name="description" content="SyvBiotech - Leading pharmaceutical company in Pune, India, dedicated to improving lives through innovative Ayurvedic and Nutraceutical medicines." />
     <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="SyvBiotech, pharmaceutical company, Pune, India, Ayurvedic medicine, Nutraceutical products, healthcare solutions, innovative medicine, quality healthcare, research and development, Syv, Biotech, Syv Biotech" />
+    <meta name="author" content="SyvBiotech Pvt. Ltd." />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="SyvBiotech - Leading pharmaceutical company in Pune, India, dedicated to improving lives through innovative Ayurvedic and Nutraceutical medicines." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://syvbiotech.com" /> 
+    <meta property="og:image" content="/logo.svg" /> 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="SyvBiotech - Leading pharmaceutical company in Pune, India, dedicated to improving lives through innovative Ayurvedic and Nutraceutical medicines." />
+    <meta name="twitter:image" content="/logo.svg" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
